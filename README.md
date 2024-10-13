@@ -1,6 +1,10 @@
 # Scientific-Project
 
-Foobar is a Python library for dealing with word pluralization.
+This code is used in a project where 
+
+Provide clear documentation in the README.md explaining what the
+project does, how to install it, and how to use it. Include comments in the
+code to explain key sections, especially complex logic
 
 ## Installation
 
@@ -31,6 +35,11 @@ Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+## Contact
+
+Max Mourmans - maxmourmans22@gmail.com
+Project link - https://github.com/MaxMourmans/Scientific-Project 
 
 ## License
 
