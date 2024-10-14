@@ -4,7 +4,7 @@
 
 This repository houses the computational code developed for the scientific programming project (2425-MSB1015). The project aims to investigate the microbiome composition of individuals with Autism Spectrum Disorder (ASD) in comparison to controls.
 
-The code implements a pipeline that encompasses data processing, cleaning, and statistical analysis. By examining microbiome data at both the Phylum (higher-level) and Family (lower-level) taxonomic levels, this analysis provides a balanced perspective on potential differences in microbiome composition between these groups.
+The code (ScientificProjectV2.R) implements a pipeline that encompasses data processing, cleaning, and statistical analysis. By examining microbiome data at both the Phylum (higher-level) and Family (lower-level) taxonomic levels, this analysis provides a balanced perspective on potential differences in microbiome composition between these groups.
 
 #### There are two datasets used:
 #### GSE113690_Autism_16S_rRNA_OTU_assignment_and_abundance.csv
