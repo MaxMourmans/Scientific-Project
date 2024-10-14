@@ -7,7 +7,7 @@ This repository houses the computational code developed for the scientific progr
 The code implements a pipeline that encompasses data processing, cleaning, and statistical analysis. By examining microbiome data at both the Phylum (higher-level) and Family (lower-level) taxonomic levels, this analysis provides a balanced perspective on potential differences in microbiome composition between these groups.
 
 #### There are two datasets used:
-#### -	GSE113690_Autism_16S_rRNA_OTU_assignment_and_abundance.csv
+#### GSE113690_Autism_16S_rRNA_OTU_assignment_and_abundance.csv
 
   From: NCBI study GSE113690
 
@@ -15,7 +15,7 @@ The code implements a pipeline that encompasses data processing, cleaning, and s
 
   Link: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE113690 
 
-#### -	SampleInfo.xlsx
+#### SampleInfo.xlsx
 
 From: Supplemental Data of GSE113690 paper
 
