@@ -1,3 +1,5 @@
+![1429-bacteria banner](https://github.com/user-attachments/assets/49bc62ec-13a4-45f9-8895-c225339edac7)
+
 # Scientific Project: Difference in Microbiome Compositions
 
 This repository houses the computational code developed for the scientific programming project (2425-MSB1015). The project aims to investigate the microbiome composition of individuals with Autism Spectrum Disorder (ASD) in comparison to controls.
