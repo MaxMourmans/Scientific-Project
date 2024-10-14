@@ -45,17 +45,17 @@ This software has to be installed:
 - microViz
 
 ## Usage
-After installing the prerequisites, these steps are taken:
+Once the necessary prerequisites are installed, the project can be accessed in RStudio. The following general steps outline the data analysis process after importing the datasets:
 
-#### (1)	Data processing:
+### (1)	Data processing:
 What’s done: Important information is extracted and set to the right format
 
 Plots/table: Characteristics table based on sample information
-#### (2)	General data cleaning:
+### (2)	General data cleaning:
 What’s done: Duplicates, missing values and mislabels are identified/corrected
 
 Plots/table: none
-#### (3)	Statistical tests:
+### (3)	Statistical tests:
 What’s done: Phyloseq object created, Alpha- and Beta diversity tests
 
 Plots/table: Composition plots, Alpha/Beta boxplots, PCoA
