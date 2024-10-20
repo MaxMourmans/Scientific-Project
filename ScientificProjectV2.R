@@ -1,25 +1,31 @@
 ##### SCIENTIFIC PROGRAMMING #####
 # Subject: Meta-genomic sequencing of gut microbiome associated with ASD patients
 # Author: Max Mourmans
-# Date: 18-10-2024
+# Date: 20-10-2024
+# Info: Project code for Scientific Programming Project, MSB
+
 
 ####################
 # Install packages #
 ####################
-#Uncomment when not installed yet!
-install.packages("tidyverse")
-install.packages("glue")
-install.packages("gtsummary")
-install.packages("ggplot2")
-install.packages("taxize")
-install.packages("phyloseq")
-install.packages("readxl")
-install.packages("ggpubr")
-install.packages("microbiome")
-install.packages("microViz",
+#Skip installation part, when already installed all packages below
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+ install.packages("BiocManager")
+}
+#Install R packages using BiocManager
+BiocManager::install("tidyverse")
+BiocManager::install("glue")
+BiocManager::install("gtsummary")
+BiocManager::install("ggplot2")
+BiocManager::install("phyloseq")
+BiocManager::install("readxl")
+BiocManager::install("ggpubr")
+BiocManager::install("microbiome")
+BiocManager::install("microViz",
 repos = c(davidbarnett = "https://david-barnett.r-universe.dev", getOption("repos"))
 )
-
+#TAXIZE DOESN'T WORK ANYMORE!
+#BiocManager::install("taxize")
 
 ####################
 #    R libraries   #
@@ -28,17 +34,16 @@ library(tidyverse)
 library(glue)
 library(gtsummary)
 library(ggplot2)
-library(taxize)
 library(phyloseq)
 library(readxl)
 library(ggpubr)
 library(microbiome)
 library(microViz)
+#TAXIZE DOESN'T WORK ANYMORE!
+#library(taxize)
 
-
-#Set working directory
+#If not working in GitHub cloned repository, uncomment and set working directory
 setwd("C:/Set/Your/Working/Directory/Here")
-setwd("C:/Users/max-m/OneDrive/Documenten/Systems Biology/Year 2/Scientific Programming/Project")
 
 #Load data set
 raw_rRNA_OTU <- read.csv("16S_rRNA_OTU_assignment_and_abundance.csv")
@@ -130,14 +135,15 @@ check_phylum <- function(phylum, index) {
   })
 }
 
-#Apply Verification Phyla Function
-## WARNING: RUN THIS FOR-LOOP SEPERATELY AND GIVE INPUT WHERE NEEDED!
-for (i in seq_along(unique_phyla)) {
-  check_phylum(unique_phyla[i], i)
-}
+# #Apply Verification Phyla Function
+# ## WARNING: DOESN'T WORK ANYMORE DUE TO TAXIZE
+# for (i in seq_along(unique_phyla)) {
+#   check_phylum(unique_phyla[i], i)
+# }
+# rm(i)
 #Data frame with all phyla and verification status
 verified_phyla <- cbind(data.frame(unique_phyla), verified_phyla)
-rm(i)
+
 
 #Correct not verified data by renaming the mislabels based on NCBI data
 rRNA_OTU <- rRNA_OTU %>%
@@ -153,13 +159,14 @@ rRNA_OTU <- rRNA_OTU %>%
 #Run again to verify the mislabel corrections by repeating the above steps
 unique_phyla <- unique(rRNA_OTU$Phylum)
 verified_phyla <- data.frame(verified_status = rep(0, length(unique_phyla)))
-#RUN AGAIN SEPERATELY VERIFICATION FUNCTION
-for (i in seq_along(unique_phyla)) {
-  check_phylum(unique_phyla[i], i) 
-}
+# ## WARNING: DOESN'T WORK ANYMORE DUE TO TAXIZE
+# for (i in seq_along(unique_phyla)) {
+#   check_phylum(unique_phyla[i], i) 
+# }
+#rm(i)
 #Data frame with Phyla and UPDATED verification status
 verified_phyla <- cbind(data.frame(unique_phyla), verified_phyla)
-rm(i)
+
 
 
 # 3.2 Are there any mislabels/unclassified labels in Family labeling?
@@ -189,13 +196,14 @@ check_family <- function(family, index) {
 }
 
 #Apply Verification Family Function
-## WARNING: RUN THIS FOR-LOOP SEPERATELY!
-for (i in seq_along(unique_families)) {
-  check_family(unique_families[i], i)
-}
+# ## WARNING: DOESN'T WORK ANYMORE DUE TO TAXIZE
+# for (i in seq_along(unique_families)) {
+#   check_family(unique_families[i], i)
+# }
+#rm(i)
 #Data frame with all families and verification status
 verified_families <- cbind(data.frame(unique_families), verified_families)
-rm(i)
+
 
 #Remove unclassified phyla
 rRNA_OTU <- rRNA_OTU %>%
@@ -231,13 +239,14 @@ rRNA_OTU <- rRNA_OTU %>%
 #Run again to verify the mislabel corrections by repeating the above steps
 unique_families <- unique(rRNA_OTU$Family)
 verified_families <- data.frame(verified_status = rep(0, length(unique_families)))
-#RUN AGAIN SEPERATELY VERIFICATION FUNCTION
-for (i in seq_along(unique_families)) {
-  check_family(unique_families[i], i) 
-}
+### WARNING: DOESN'T WORK ANYMORE DUE TO TAXIZE
+# for (i in seq_along(unique_families)) {
+#   check_family(unique_families[i], i) 
+# }
+#rm(i)
 #Family and UPDATED verification status
 verified_families <- cbind(data.frame(unique_families), verified_families)
-rm(i)
+
 
 
 # Statistical tests -------------------------------------------------------
